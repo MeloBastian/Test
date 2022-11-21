@@ -1,0 +1,104 @@
+localrules directive specifies rules that are not present in the Snakefile:
+	conc_and_align_1genus
+	conc_and_ali_allsp
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 1000
+Job counts:
+	count	jobs
+	4	BMGE
+	1	Macse
+	1	all
+	6
+
+[Tue Jun 14 09:14:10 2022]
+rule BMGE:
+    input: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_NT.fna
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_hmm_bmge.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_hmm_bmge.doneflag
+    jobid: 33633
+    wildcards: gene=98192at40674
+
+Submitted job 33633 with external jobid 'Submitted batch job 3875874'.
+
+[Tue Jun 14 09:14:10 2022]
+rule Macse:
+    input: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali_aa_hmm.fasta, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali.fna
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali_NT.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali_NT.doneflag
+    jobid: 24840
+    wildcards: gene=198859at40674
+
+Submitted job 24840 with external jobid 'Submitted batch job 3875875'.
+
+[Tue Jun 14 09:14:10 2022]
+rule BMGE:
+    input: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_NT.fna
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_hmm_bmge.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_hmm_bmge.doneflag
+    jobid: 37486
+    wildcards: gene=12731at40674
+
+Submitted job 37486 with external jobid 'Submitted batch job 3875876'.
+
+[Tue Jun 14 09:14:10 2022]
+rule BMGE:
+    input: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_NT.fna
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_hmm_bmge.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_hmm_bmge.doneflag
+    jobid: 31963
+    wildcards: gene=19231at40674
+
+Submitted job 31963 with external jobid 'Submitted batch job 3875877'.
+[Tue Jun 14 09:14:49 2022]
+Error in rule BMGE:
+    jobid: 31963
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_hmm_bmge.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_hmm_bmge.doneflag
+    shell:
+        
+        /beegfs/home/mbastian/bioinfo/bin/java -jar /beegfs/data/mbastian/BMGE.jar -i /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_NT.fna -t CODON -o /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_hmm_bmge.fna
+        echo done > /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/19231at40674_filtred_ali_hmm_bmge.doneflag
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 3875877
+
+Error executing rule BMGE on cluster (jobid: 31963, external: Submitted batch job 3875877, jobscript: /beegfs/home/mbastian/Scripts/Zoonomia_alignment/.snakemake/tmp.vyrafgdx/snakejob.BMGE.31963.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Jun 14 09:14:59 2022]
+Error in rule Macse:
+    jobid: 24840
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali_NT.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali_NT.doneflag
+    shell:
+        
+        /beegfs/home/mbastian/bioinfo/bin/java -jar /beegfs/data/mbastian/macse_v2.06.jar -prog reportMaskAA2NT -align_AA /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali_aa_hmm.fasta  -align /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali.fna -mask_AA -
+        echo done > /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/198859at40674_filtred_ali_NT.doneflag
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 3875875
+
+Error executing rule Macse on cluster (jobid: 24840, external: Submitted batch job 3875875, jobscript: /beegfs/home/mbastian/Scripts/Zoonomia_alignment/.snakemake/tmp.vyrafgdx/snakejob.Macse.24840.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Jun 14 09:15:39 2022]
+Error in rule BMGE:
+    jobid: 33633
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_hmm_bmge.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_hmm_bmge.doneflag
+    shell:
+        
+        /beegfs/home/mbastian/bioinfo/bin/java -jar /beegfs/data/mbastian/BMGE.jar -i /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_NT.fna -t CODON -o /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_hmm_bmge.fna
+        echo done > /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/98192at40674_filtred_ali_hmm_bmge.doneflag
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 3875874
+
+Error executing rule BMGE on cluster (jobid: 33633, external: Submitted batch job 3875874, jobscript: /beegfs/home/mbastian/Scripts/Zoonomia_alignment/.snakemake/tmp.vyrafgdx/snakejob.BMGE.33633.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Jun 14 09:15:39 2022]
+Error in rule BMGE:
+    jobid: 37486
+    output: /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_hmm_bmge.fna, /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_hmm_bmge.doneflag
+    shell:
+        
+        /beegfs/home/mbastian/bioinfo/bin/java -jar /beegfs/data/mbastian/BMGE.jar -i /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_NT.fna -t CODON -o /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_hmm_bmge.fna
+        echo done > /beegfs/data/mbastian/Zoonomia_postbusco/Genes_to_analyse_V2/12731at40674_filtred_ali_hmm_bmge.doneflag
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 3875876
+
+Error executing rule BMGE on cluster (jobid: 37486, external: Submitted batch job 3875876, jobscript: /beegfs/home/mbastian/Scripts/Zoonomia_alignment/.snakemake/tmp.vyrafgdx/snakejob.BMGE.37486.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /beegfs/home/mbastian/Scripts/Zoonomia_alignment/.snakemake/log/2022-06-14T090742.470933.snakemake.log
